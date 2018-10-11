@@ -92,10 +92,12 @@ form{
 content: url(../img/error-icon.svg);
 height:15px;
 width:15px;
+visibility: hidden;
 }
 
 #min-range-error{
  color:#dd1972;
+ visibility: hidden;
 }
 .max-range-div{
  width:33%;
@@ -110,10 +112,12 @@ width:15px;
 content: url(../img/error-icon.svg);
 height:15px;
 width:15px;
+visibility: hidden;
 }
 
 #max-range-error{
  color:#dd1972;
+ visibility: hidden;
 }
 
 #update-button-div{

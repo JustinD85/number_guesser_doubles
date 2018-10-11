@@ -1,47 +1,43 @@
-// variables
-var minRange = document.querySelector("#min-range-input");
-var maxRange = document.querySelector("#max-range-input");
+//section for min-max manipulation
+var minRange;
+var maxRange;
+var minNumber;
+var maxNumber;
+
 var maxRangeError = document.querySelector("#max-range-error");
 var minRangeError = document.querySelector("#min-range-error");
+
 var updateButton = document.querySelector("#update-button");
 var clearButton = document.querySelector("#clear-button");
 var numberRange = document.querySelector("#number-range");
-var minNumber = document.querySelector("#min-range-number");
-var maxNumber = document.querySelector("#max-range-number");
+
 var guessInput = document.querySelector("#guess-number-input");
 var guessButton = document.querySelector("#submit-button");
 var youGuessed = document.querySelector("#guessed-number");
 var guessNumberInput = document.querySelector("#guess-number-input");
 var guessResponse = document.querySelector("#guess-response");
 var resetButton = document.querySelector("#reset-button")
-var rangeDiff = document.querySelector(maxRange - minRange);
-var randomNumber = Math.floor(Math.random * (rangeDiff + 1) + minRange);
-console.log(randomNumber);
+var randomNumber = Math.floor(Math.random() );
+console.log(minNumber);
 
 // Range
 updateButton.addEventListener("click", function(e) {
- e.preventDefault();
- minNumber.innerText = minRange.value;
- maxNumber.innerText = maxRange.value;
+  updateMinMaxNumber();
 
+ e.preventDefault();
 
 });
 
 // Clear Button
 clearButton.addEventListener("click", function(e) {
+  guessInput.value = ""
  e.preventDefault();
- minNumber.innerText = "0";
- maxNumber.innerText = "100";
- minRange.value = "";
- maxRange.value = "";
- guessNumberInput.value = "";
- youGuessed.innerText = "?";
-
 });
 
 // Reset Button
 
 resetButton.addEventListener("click", function() {
+  //refreshes the page;
  location.reload();
 });
 
@@ -60,3 +56,8 @@ guessButton.addEventListener("click", function(e) {
 
 
 });
+
+function updateMinMaxNumber(){
+document.querySelector("#min-range-number").innerText = document.querySelector("#min-range-input").value;
+document.querySelector("#max-range-number").innerText = document.querySelector("#max-range-input").value;
+}
