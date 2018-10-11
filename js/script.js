@@ -1,26 +1,23 @@
 //section for min-max manipulation
-var minRange;
-var maxRange;
-var minNumber;
-var maxNumber;
-
+var minRange, maxRange, minNumber, maxNumber;
 var maxRangeError = document.querySelector("#max-range-error");
 var minRangeError = document.querySelector("#min-range-error");
 
+//Buttons
 var updateButton = document.querySelector("#update-button");
 var clearButton = document.querySelector("#clear-button");
-var numberRange = document.querySelector("#number-range");
+var resetButton = document.querySelector("#reset-button");
+var submitButton = document.querySelector("#submit-button");
 
+// Guess related activities
 var guessInput = document.querySelector("#guess-number-input");
-var guessButton = document.querySelector("#submit-button");
-var youGuessed = document.querySelector("#guessed-number");
-var guessNumberInput = document.querySelector("#guess-number-input");
+var guessLastGuess = document.querySelector("#guessed-number");
 var guessResponse = document.querySelector("#guess-response");
-var resetButton = document.querySelector("#reset-button")
-var randomNumber = Math.floor(Math.random() );
-console.log(minNumber);
+///////                  END OF VARIABLES              /////// 
 
-// Range
+
+
+// Updates Number Range
 updateButton.addEventListener("click", function(e) {
   updateMinMaxNumber();
 
@@ -28,36 +25,30 @@ updateButton.addEventListener("click", function(e) {
 
 });
 
-// Clear Button
+// Clear Button, clears just guess-input
 clearButton.addEventListener("click", function(e) {
   guessInput.value = ""
  e.preventDefault();
 });
 
-// Reset Button
-
+// Reset Button, reloads page
 resetButton.addEventListener("click", function() {
   //refreshes the page;
  location.reload();
 });
 
-// Guess Button
-
-guessButton.addEventListener("click", function(e) {
+// Guess Button, 
+submitButton.addEventListener("click", function(e) {
  e.preventDefault();
- youGuessed.innerText = guessNumberInput.value;
- //if less than 0
- if(minRange < 0) {
-   //then error message(minError)
-   minRangeError.style.display = "none"
- }
- //if max range is over 100
-   //then error message(maxError)
-
-
+ 
 });
 
 function updateMinMaxNumber(){
-document.querySelector("#min-range-number").innerText = document.querySelector("#min-range-input").value;
-document.querySelector("#max-range-number").innerText = document.querySelector("#max-range-input").value;
+  var tempMinRangeInput = document.querySelector("#min-range-input");
+  var tempMaxRangeInput = document.querySelector("#max-range-input");
+  document.querySelector("#min-range-number").innerText = tempMinRangeInput.value;
+  document.querySelector("#max-range-number").innerText = tempMaxRangeInput.value;
+  tempMaxRangeInput.value=tempMinRangeInput.value="";
+  alert(tempMinRangeInput);
+
 }
