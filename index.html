@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>Number Guesser</title>
+ <link rel="stylesheet" type="text/css" href="css/styles.css">
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+
+</head>
+
+<body>
+ <div class='container'>
+   <article id='left-section'>
+     <section id="number-guess-title">NUMBER</section>
+     <section id="min-max-section">
+       <form>
+         <div class="min-range-div">
+           <span id="input-titles">Min Range</span>
+           <input type="number" id="min-range-input">
+           <span id="min-range-error"> Enter a min range</span>
+         </div>
+         <div class="max-range-div">
+           <span id="input-titles">Max Range</span>
+           <input type="number" id="max-range-input">
+           <span id="max-range-error"> Enter a max range</span>
+         </div>
+         <div id="update-button-div">
+           <button type="button" id="update-button">UPDATE</button>
+         </div>
+
+         <div class="max-range-div">
+           <!--  EmptyDiv  for Style           -->
+         </div>
+         <hr>
+         <div id="number-range">The Current Range is <span id="min-range-number">1</span> to <span id="max-range-number">100</span></div>
+         <span id="input-titles">Guess</span><input id="guess-number-input" type="number" name="guess">
+         <button type="submit" id="submit-button">SUBMIT GUESS</button>
+       </form>
+     </section>
+     <section id="clear-reset-section">
+       <button type="button" id="clear-button">CLEAR</button>
+       <button type="button" id="reset-button">RESET</button>
+     </section>
+   </article>
+   <article id="right-section">
+     <section id="you-guessed-title">
+       You Guessed:
+     </section>
+     <section id="guessed-number">
+       25
+     </section>
+     <section id="guess-response">
+       Sorry, that is too high
+     </section>
+   </article>
+ </div>
+ <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,281 @@
+body{
+ margin: 0;
+ padding: 0;
+ font-family: "Open Sans";
+ color:#6e6e6e;
+}
+svg {
+   width:15px;
+   height:15px;
+}
+button{
+ height:2rem;
+ border-radius:25px;
+ background:#6e6e6e;
+ color:#ffffff;
+ height:5vh;
+ font-size:14px;
+ font-weight:bold;
+}
+
+article{
+padding:2vw;
+}
+
+input{
+ height:4vh;
+}
+
+.container{
+ margin:0;
+ padding:0;
+ background: fuchsia;
+ display: flex;
+}
+
+#left-section{
+ height:100vh;
+ width: 50vw;
+ background: #f7f7f7;
+ display: flex;
+ flex-direction: column;
+}
+
+#number-guess-title{
+ font-size: 5rem;
+ display:flex;
+ align-items:flex-end;
+ justify-content:center;
+ font-weight: bold;
+ color: #DD1972;
+ height:calc(100% / 3);
+}
+
+#number-guess-title::after {
+ content:'GUESSER';
+ font-weight: lighter;
+}
+
+#min-max-section{
+/*   background:peru; */
+ width:100%;
+ display:flex;
+ height:calc(100% / 3);
+ align-items:flex-start;
+}
+
+form{
+ display:flex;
+ justify-content: space-between;
+/*   justify-content:flex-start; */
+ height:calc(100% / 3);
+ width:100%;
+ flex-wrap:wrap;
+/*   background:black; */
+}
+
+#input-titles{
+ width:100%;
+ display:block;
+ font-weight:bold;
+}
+.min-range-div{
+ width:33%;
+}
+#min-range-input{
+/*   margin:1vw; */
+/*   margin-left:0; */
+ width:95%;
+ border: #DD1972 solid 2px;
+}
+#min-range-error::before{
+content: url(../img/error-icon.svg);
+height:15px;
+width:15px;
+}
+
+#min-range-error{
+ color:#dd1972;
+}
+.max-range-div{
+ width:33%;
+/*   width:calc(100% / 3); */
+}
+#max-range-input{
+ width:95%;
+ border: solid #6e6e6e 2px;
+}
+
+#max-range-error::before{
+content: url(../img/error-icon.svg);
+height:15px;
+width:15px;
+}
+
+#max-range-error{
+ color:#dd1972;
+}
+
+#update-button-div{
+ width:33%;
+ display:flex;
+ align-items:center;
+}
+
+#update-button{
+ flex:1;
+}
+
+#number-range{
+ width:100%;
+ margin:2% 0;
+}
+
+#min-number{
+ font-weight:bold;
+ text-decoration:underline;
+}
+
+#max-number{
+ font-weight:bold;
+ text-decoration:underline;
+}
+
+hr{
+ width:100%;
+ opacity: .2;
+}
+
+#guess-number-input{
+ height:calc(100% / 3);
+ width:100%;
+ border:solid #6e6e6e 2px;
+ margin-bottom: 1rem;
+}
+
+#submit-button{
+ width:100%;
+ height:7vh;
+ font-size:18px;
+ font-weight:bold;
+}
+#clear-reset-section{
+ height:28%;
+ width:100%;
+ margin-top:3rem;
+/*   box-sizing: border-box; */
+}
+#reset-button{
+ width:49%
+}
+#clear-button{
+ width:49%;
+}
+
+#right-section{
+ height:100vh;
+ width: 50vw;
+ background: #404041;
+ display:flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction:column;
+/*   padding- right:3vw; */
+}
+
+#you-guessed-title{
+ display:flex;
+ width: 100%;
+ height:calc(100% / 3);
+ align-items: flex-end;
+ justify-content: center;
+ color:#ffffff;
+ font-size: 2.5rem;
+}
+
+#guessed-number{
+ display:flex;
+ width: 100%;
+ height:calc(100% / 3);
+ align-items: center;
+ justify-content: center;
+ color: #f74D98;
+ font-size: 7rem;
+ font-weight: bold;
+}
+
+#guess-response{
+ display:flex;
+ width: 100%;
+ height:calc(100% / 3);
+ justify-content: center;
+ color:#ffffff;
+ font-size: 2rem;
+}
+/***********MEDIA QUERIES*********/
+
+/* Large devices (large desktops, 1200px and up) */
+ @media (max-width: 1210px) {
+   #number-guess-title{
+     font-size: 3.5rem;
+   }
+ }
+
+ /* Large devices (large desktops, 1200px and up) */
+ @media (max-width: 1000px) {
+   #number-guess-title{
+     font-size: 3rem;
+   }
+
+ }
+
+ /* Medium devices (desktops, 992px and up) */
+ @media (max-width: 770px) {
+   #number-guess-title{
+   font-size: 2rem;
+   }
+ }
+
+
+/* Small devices ( up to 420px) */
+ @media (max-width: 514px) {
+   body{
+     font-size: 13px;
+   }
+   #number-guess-title{
+     font-size: 1rem;
+     display:flex;
+     align-items:flex-end;
+     height:20%;
+/*       background:black; */
+   }
+   .min-range-div{
+     width:50%;
+   }
+
+   .max-range-div{
+     width:50%;
+   }
+   #update-button-div{
+     margin: 0 30px;
+     width: 100%;
+/*       background:black; */
+   }
+   #submit-button{
+     font-size:1rem;
+    }
+   #right-section section{
+/*       align-items:flex-start; */
+     text-align:center;
+     font-size:2rem;
+   }
+   #guess-response{
+     align-items:flex-start;
+   }
+   #clear-reset-section{
+     display:flex;
+/*       margin-top:1rem; */
+/*       justify-content:center; */
+     align-items:center;
+   }
+ }
