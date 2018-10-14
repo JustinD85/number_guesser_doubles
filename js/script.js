@@ -8,14 +8,11 @@ var submitButton = document.querySelector("#submit-button");
 ///////                  END OF VARIABLES              /////// 
 
 window.onload = function () {
-    init(); //means set variables(do i need to?){
-
-    }
-    
+    init(); //means set variables(do i need to?)
 
 // Updates Number Range
 updateButton.addEventListener("click", function(e) {
-    e.preventDefault();
+  e.preventDefault();
   updateMinMaxNumber();
   generateRandomNumber();
 
@@ -23,10 +20,10 @@ updateButton.addEventListener("click", function(e) {
 
 // Clear Button, clears just guess-input
 clearButton.addEventListener("click", function(e) {
+  e.preventDefault();
   setGuessInput("");
   setMinNumber("");
   setMaxNumber("");
-  e.preventDefault();
 });
 
 // Reset Button, reloads page
@@ -56,12 +53,14 @@ submitButton.addEventListener("click", function(e) {
   }
   e.preventDefault();
 });
+}
+
 
 // Function Section
 function generateRandomNumber(){
   let min = getMinNumber();
   let max = getMaxNumber();
-  randomNumber = Math.floor(Math.random() * (parseInt(max) - parseInt(min))) + parseInt(min) + 1;
+  randomNumber = Math.floor(Math.random() * (max - min)) + min + 1;
 }
 
 function getMinNumber(){
@@ -127,6 +126,6 @@ function init(){
   setGuessResponse(" ");
   setLastGuess("??");
   generateRandomNumber();
-  console.log("Initialized")
+  console.log("Initialized");
   //startEventListeners();//can I do this?
 }
