@@ -92,7 +92,7 @@ form{
 content: url(../img/error-icon.svg);
 height:15px;
 width:15px;
-visibility: hidden;
+/*visibility: hidden;*/
 }
 
 #min-range-error{
@@ -112,7 +112,7 @@ visibility: hidden;
 content: url(../img/error-icon.svg);
 height:15px;
 width:15px;
-visibility: hidden;
+/*visibility: hidden;*/
 }
 
 #max-range-error{
