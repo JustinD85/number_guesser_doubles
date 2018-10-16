@@ -6,127 +6,115 @@
  <meta name="viewport" content="width=device-width">
  <link rel="stylesheet" type="text/css" href="css/styles.css">
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
-
 </head>
 
 <body>
  <header id="number-guess-title">NUMBER</header>
  <!-- header for ultimate -->
  <div class='container'>
-
-
   <!-- left section start -->
   <article id='left-section'>
     <!-- Beggining of Set Range Section -->
 
-
-    <!-- <section id="min-max-section"> -->
-
-
-      <section>
-        <form>
-         <div>Set Range</div>
-         <div class="min-range-div">
-           <span id="input-titles">Min Range</span>
-           <input type="number" id="min-range-input">
-           <span id="min-range-error"> Enter a min range</span>
-         </div>
-         <div class="max-range-div">
-           <span id="input-titles">Max Range</span>
-           <input type="number" id="max-range-input">
-           <span id="max-range-error"> Enter a max range</span>
-         </div>
-         <div id="update-button-div">
-           <button type="button" id="update-button">UPDATE</button>
-         </div>
-       </form>
-     </section>
-     <!-- End of Set Range Section -->
-
-
-
-
-     <!-- Beginning of Challenger Section -->
-     <section id="challengers">
-
-
+    <section>
       <form>
-
-       <div id="number-range">The Current Range is <span id="min-range-number">1</span> to <span id="max-range-number">100</span>
+       <div>Set Range</div>
+       <div class="min-range-div">
+         <span id="input-titles">Min Range</span>
+         <input type="number" id="min-range-input">
+         <span id="min-range-error"> Enter a min range</span>
        </div>
-       
-
-       <div>
-       <ul>
-        <li>Challanjor</li>
-        <li>Nombre</li>
-        <li><input type="text"></li>
-      </ul>
-       
-       
-       <span id="input-titles">Guess</span><input id="guess-number-input" type="number" name="guess">
-      </div>
-
-       <div>
-       <ul>
-        <li>Challanjor</li>
-        <li>Nombre</li>
-        <li><input type="text"></li>
-      </ul>
-       
-       
-       <span id="input-titles">Guess</span><input id="guess-number-input" type="number" name="guess">
-      </div>
-
-<!-- button section -->
-       <section id="clear-reset-section">
-         <button type="submit" id="submit-button">SUBMIT GUESS</button>
-         <button type="button" id="reset-button">RESET</button>
-         <button type="button" id="clear-button">CLEAR</button>
-
-       </section>
+       <div class="max-range-div">
+         <span id="input-titles">Max Range</span>
+         <input type="number" id="max-range-input">
+         <span id="max-range-error"> Enter a max range</span>
+       </div>
+       <div id="update-button-div">
+         <button type="button" id="update-button">UPDATE</button>
+       </div>
      </form>
    </section>
-
-
-   <!-- </section> -->
-
-   <!-- clear button -->
-
- </section>
+   <!-- End of Set Range Section -->
 
 
 
- <!-- latest score -->
- <section id="latest-score">
 
-  <div class="latest-guess-section">
+   <!-- Beginning of Challenger Section -->
+   <section id="challenger-section">
 
-   <section id="you-guessed-title">
-     You Guessed:
+    <form>
+
+     <div id="number-range">
+      The Current Range is <span id="min-range-number">1</span> to <span id="max-range-number">100</span>
+    </div>
+
+    <div id="challenger1">
+     <ul>
+      <li>Challenger 1</li>
+      <li class="challenger1-name">Name</li>
+      <li>
+        <input id="challenger1-name-input" type="text">
+      </li>
+    </ul>
+    <span class="input-titles">Guess</span><input id="challenger1-guess" type="number">
+  </div>
+
+  <div id="challenger2">
+   <ul>
+    <li>Challenger 2</li>
+    <li class="challenger2-name">Name</li>
+    <li>
+      <input id="challenger2-name-input" type="text">
+    </li>
+  </ul>
+  <span class="input-titles">Guess</span><input id="challenger2-guess" type="number">
+</div>
+
+<!-- button section -->
+<section id="clear-reset-section">
+ <button type="submit" id="submit-button">SUBMIT GUESS</button>
+ <button type="button" id="reset-button">RESET GAME</button>
+ <button type="button" id="clear-button">CLEAR GAME</button>
+</section>
+
+</form>
+
+</section>
+
+<!-- </section> -->
+
+
+
+<!-- latest score -->
+<section id="latest-guess-section">
+
+  <div class="challenger1-latest-guess">
+    <section class="challenger1-name">Challenger 1 Name</section>
+    <section class="you-guessed-title">
+     currentGuess
    </section>
-   <section id="guessed-number">
+   <section id="challenger1-guessed-number">
      ??
    </section>
-   <section id="guess-response">
+   <section id="challenger1-guess-response">
      Sorry, that is too high
    </section>
-   </div>
+ </div>
 
-   <div class="latest-guess-section">
-
-   <section id="you-guessed-title">
-     You Guessed:
-   </section>
-   <section id="guessed-number">
-     ??
-   </section>
-   <section id="guess-response">
-     Sorry, that is too high
-   </section>
-   </div>
- 
+ <div class="challenger2-latest-guess">
+  <section class="challenger2-name">Challenger 2 Name</section>
+  <section class="you-guessed-title">
+   currentGuess
  </section>
+ <section id="challenger2-guessed-number">
+   ??
+ </section>
+ <section id="challenger2-guess-response">
+   Sorry, that is too high
+ </section>
+</div>
+
+</section>
 
 
 </article>
