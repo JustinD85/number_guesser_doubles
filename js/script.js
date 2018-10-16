@@ -58,6 +58,7 @@ function update(arg1, arg2){
   // Guess Button,
   submitButton.addEventListener('click', function(e) {
     // Error check input
+    e.preventDefault();
     if (!getGuessInput()) {
       setGuessResponse('Enter a Number in Range');
       // break;
@@ -73,7 +74,6 @@ function update(arg1, arg2){
     } else {
       setGuessResponse('BOOM');
     }
-    e.preventDefault();
   });
 
 
@@ -113,7 +113,7 @@ function update(arg1, arg2){
   }
 
   function getGuessInput() {
-    return document.querySelector('#guess-number-input').value;
+    return parseInt(document.querySelector('#guess-number-input').value);
   }
   function clearGuessInput() {
     document.querySelector('#guess-number-input').value = "";

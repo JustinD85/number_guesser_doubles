@@ -242,7 +242,7 @@ hr{
 
 
 /* Small devices ( up to 420px) */
- @media (max-width: 514px) {
+ @media only screen and (max-width: 514px) {
    body{
      font-size: 13px;
    }
