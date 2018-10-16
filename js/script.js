@@ -1,7 +1,14 @@
 window.onload = function() {
   let randomNumber;
   let minNum,maxNum;
-  
+
+  class Player{
+    constructor(inName){
+      this.name = inName || "player1";
+      this.guess = "";
+      this.guessHistory = {};
+    }
+  }
 
 
   // Buttons
@@ -38,7 +45,12 @@ window.onload = function() {
   // Guess Button,
   submitButton.addEventListener('click', function(e) {
     // Error check input
+    /*
+      :Default player name if none entered
+      :
+    */
     e.preventDefault();
+    //PER PLAYER GUESS
     if (!getGuessInput()) {
       setGuessResponse('Enter a Number in Range');
       // break;
@@ -53,8 +65,14 @@ window.onload = function() {
       setLastGuess(getGuessInput());
     } else {
       setGuessResponse('BOOM');
+      //makes cards
+        //both names as title
+        //winner name and winner as title 
+        //number of tries for the winner
     }
   });
+
+  //CARD FROM COMP
 
 
   // Function Section
