@@ -120,15 +120,15 @@ window.onload = function() {
   function getGuessResponse() {
     return document.querySelector('#guess-response').innerText;
   }
-  function setGuessResponse(inValue) {
-    document.querySelector('#guess-response').innerText = inValue;
+  function setGuessResponse(player, inValue) {
+    document.querySelector(`#${player}-guess-response`).innerText = inValue;
   }
 
   function getLastGuess() {
     return parseInt(document.querySelector('#guessed-number').innerText);
   }
-  function setLastGuess(inValue) {
-    document.querySelector('#guessed-number').innerText = inValue;
+  function setLastGuess(player, inValue) {
+    document.querySelector(`#${player}-guessed-number`).innerText = inValue;
   }
 
   function toggleError(minOrMax, showOrHide){
@@ -159,8 +159,10 @@ window.onload = function() {
   function init() {
     setMinNumber('1');
     setMaxNumber('100');
-    setGuessResponse(' ');
-    setLastGuess('??');
+    setGuessResponse('challenger1',' ');
+    setGuessResponse('challenger2',' ');
+    setLastGuess('challenger1','Who');
+    setLastGuess('challenger2','Knows');
     generateRandomNumber();
     
     // startEventListeners(); // can I do this?
