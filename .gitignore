@@ -1,1 +1,4 @@
-*.sublime-workspace
+*eslintrc.js
+node_modules/  
+package-lock.json 
+package.json
