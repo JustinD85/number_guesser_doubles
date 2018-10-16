@@ -1,14 +1,18 @@
 window.onload = function() {
   let randomNumber;
-  let minNum,maxNum;
+  let minNum,maxNum, player1, player2;
 
   class Player{
     constructor(inName){
       this.name = inName || "player1";
       this.guess = "";
-      this.guessHistory = {};
+      // this.guessHistory = {};
+      this.guessCount = 0;
     }
   }
+
+  var isGameOver = false;
+  var isNewGame = true;
 
 
   // Buttons
@@ -50,26 +54,48 @@ window.onload = function() {
       :
     */
     e.preventDefault();
-    //PER PLAYER GUESS
-    if (!getGuessInput()) {
-      setGuessResponse('Enter a Number in Range');
-      // break;
-    } else if (getGuessInput() < getMinNumber()
-      || getGuessInput() > getMaxNumber()) {
-        setGuessResponse('Number out of Range');
-    } else if (getGuessInput() < randomNumber) {
-      setGuessResponse('Guess too Low');
-      setLastGuess(getGuessInput());
-    } else if (getGuessInput() > randomNumber) {
-      setGuessResponse('Guess too High');
-      setLastGuess(getGuessInput());
-    } else {
-      setGuessResponse('BOOM');
-      //makes cards
-        //both names as title
-        //winner name and winner as title 
-        //number of tries for the winner
-    }
+    
+      if(isNewGame) {
+      var tempP1Name = document.querySelector('#challenger1-name-input');
+      var tempP2Name = document.querySelector('#challenger2-name-input');
+
+      // This sets the player's names based on input from DOM
+      player1 = new Player(tempP1Name.value, 'guess1')
+      player2 = new Player(tempP2Name.value, 'guess2')
+      // These functions assign the challenger name
+      setChallengerName('challenger1', player1.name);
+      setChallengerName('challenger2', player2.name);
+
+   }
+
+
+
+
+
+
+
+
+
+    // //PER PLAYER GUESS
+    // if (!getGuessInput()) {
+    //   setGuessResponse('Enter a Number in Range');
+    //   // break;
+    // } else if (getGuessInput() < getMinNumber()
+    //   || getGuessInput() > getMaxNumber()) {
+    //     setGuessResponse('Number out of Range');
+    // } else if (getGuessInput() < randomNumber) {
+    //   setGuessResponse('Guess too Low');
+    //   setLastGuess(getGuessInput());
+    // } else if (getGuessInput() > randomNumber) {
+    //   setGuessResponse('Guess too High');
+    //   setLastGuess(getGuessInput());
+    // } else {
+    //   setGuessResponse('BOOM');
+    //   //makes cards
+    //     //both names as title
+    //     //winner name and winner as title 
+    //     //number of tries for the winner
+    // }
   });
 
   //CARD FROM COMP
@@ -110,8 +136,12 @@ window.onload = function() {
     document.querySelector('#max-range-number').innerText = inValue;
   }
 
-  function getGuessInput() {
-    return parseInt(document.querySelector('#guess-number-input').value);
+  function setChallengerName(challengerNum,name) {
+    document.querySelector(`#${challengerNum}-name`).innerText = name;
+  }
+
+  function getGuessInput(player) { 
+    return parseInt(document.querySelector(`#${player}-guess`).value);
   }
   function clearGuessInput() {
     document.querySelector('#guess-number-input').value = "";
