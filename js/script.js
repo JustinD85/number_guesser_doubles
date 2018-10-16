@@ -1,28 +1,8 @@
 window.onload = function() {
   let randomNumber;
   let minNum,maxNum;
-  /*
-
-    update();
-    render();
-  */
-
-
-/*
   
-    init();
 
-function update(arg1, arg2){
-  
-}
-  update(){
-    clearGuessInput();
-    clearMinRangeInput();
-    clearMaxRangeInput();
-  };
-      render
-
-*/
 
   // Buttons
   const updateButton = document.querySelector('#update-button');
