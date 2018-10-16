@@ -10,14 +10,22 @@
 </head>
 
 <body>
-     <header id="number-guess-title">NUMBER</header>
+ <header id="number-guess-title">NUMBER</header>
  <!-- header for ultimate -->
  <div class='container'>
-   <article id='left-section'>
-     <section id="min-max-section">
-       <form>
-         
-<!-- seperate the range box -->
+
+
+  <!-- left section start -->
+  <article id='left-section'>
+    <!-- Beggining of Set Range Section -->
+
+
+    <!-- <section id="min-max-section"> -->
+
+
+      <section>
+        <form>
+         <div>Set Range</div>
          <div class="min-range-div">
            <span id="input-titles">Min Range</span>
            <input type="number" id="min-range-input">
@@ -31,34 +39,105 @@
          <div id="update-button-div">
            <button type="button" id="update-button">UPDATE</button>
          </div>
-
-         <div class="max-range-div">
-           <!--  EmptyDiv  for Style           -->
-         </div>
-         <hr>
-         <div id="number-range">The Current Range is <span id="min-range-number">1</span> to <span id="max-range-number">100</span></div>
-         <span id="input-titles">Guess</span><input id="guess-number-input" type="number" name="guess">
-         <button type="submit" id="submit-button">SUBMIT GUESS</button>
        </form>
      </section>
-     <section id="clear-reset-section">
-       <button type="button" id="clear-button">CLEAR</button>
-       <button type="button" id="reset-button">RESET</button>
-     </section>
-   </article>
-   <article id="right-section">
-     <section id="you-guessed-title">
-       You Guessed:
-     </section>
-     <section id="guessed-number">
-       ??
-     </section>
-     <section id="guess-response">
-       Sorry, that is too high
-     </section>
-   </article>
- </div>
- <script type="text/javascript" src="./js/script.js"></script>
+     <!-- End of Set Range Section -->
+
+
+
+
+     <!-- Beginning of Challenger Section -->
+     <section id="challengers">
+
+
+      <form>
+
+       <div id="number-range">The Current Range is <span id="min-range-number">1</span> to <span id="max-range-number">100</span>
+       </div>
+       
+
+       <div>
+       <ul>
+        <li>Challanjor</li>
+        <li>Nombre</li>
+        <li><input type="text"></li>
+      </ul>
+       
+       
+       <span id="input-titles">Guess</span><input id="guess-number-input" type="number" name="guess">
+      </div>
+
+       <div>
+       <ul>
+        <li>Challanjor</li>
+        <li>Nombre</li>
+        <li><input type="text"></li>
+      </ul>
+       
+       
+       <span id="input-titles">Guess</span><input id="guess-number-input" type="number" name="guess">
+      </div>
+
+<!-- button section -->
+       <section id="clear-reset-section">
+         <button type="submit" id="submit-button">SUBMIT GUESS</button>
+         <button type="button" id="reset-button">RESET</button>
+         <button type="button" id="clear-button">CLEAR</button>
+
+       </section>
+     </form>
+   </section>
+
+
+   <!-- </section> -->
+
+   <!-- clear button -->
+
+ </section>
+
+
+
+ <!-- latest score -->
+ <section id="latest-score">
+
+  <div class="latest-guess-section">
+
+   <section id="you-guessed-title">
+     You Guessed:
+   </section>
+   <section id="guessed-number">
+     ??
+   </section>
+   <section id="guess-response">
+     Sorry, that is too high
+   </section>
+   </div>
+
+   <div class="latest-guess-section">
+
+   <section id="you-guessed-title">
+     You Guessed:
+   </section>
+   <section id="guessed-number">
+     ??
+   </section>
+   <section id="guess-response">
+     Sorry, that is too high
+   </section>
+   </div>
+ 
+ </section>
+
+
+</article>
+
+<!-- right section -->
+
+<article id="right-section">
+
+</article>
+</div>
+<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
 

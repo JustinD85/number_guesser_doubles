@@ -168,6 +168,7 @@ hr{
  width:100%;
  margin-top:3rem;
 /*   box-sizing: border-box; */
+border-style: solid;
 }
 #reset-button{
  width:49%
@@ -187,14 +188,21 @@ hr{
 /*   padding- right:3vw; */
 }
 
+
+.latest-guess-section {
+  border-style: solid;
+  display: inline-block;
+}
+
 #you-guessed-title{
  display:flex;
  width: 100%;
  height:calc(100% / 3);
  align-items: flex-end;
  justify-content: center;
- color:#ffffff;
+ /*color:#ffffff;*/
  font-size: 2.5rem;
+ border-style: solid;
 }
 
 #guessed-number{
@@ -213,7 +221,7 @@ hr{
  width: 100%;
  height:calc(100% / 3);
  justify-content: center;
- color:#ffffff;
+ /*color:#ffffff;*/
  font-size: 2rem;
 }
 /***********MEDIA QUERIES*********/
