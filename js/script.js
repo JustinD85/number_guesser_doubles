@@ -3,16 +3,15 @@ window.onload = function() {
   let minNum,maxNum, challenger1, challenger2;
 
   class Player{
-    constructor(whichChallenger, inName){
-      this.whichChallenger = whichChallenger;
+    constructor(whichOne, inName){
+      this.whichOne = whichOne;
       this.name = inName; //required
-      this.lastGuess = 0;
+      this.guess = 0;
       this.guessCount = 0;
     }
 
-    guess(){
-      this.lastGuess = document.querySelector(`#${this.whichChallenger}-guess`).value;
-      return this.lastGuess;
+    setGuess(){
+      this.guess = parseInt(document.querySelector(`#${this.whichOne}-guess`).value);
     }
   }
 
@@ -74,8 +73,10 @@ window.onload = function() {
    }
 
     //PER PLAYER GUESS
-   guessChecker1(challenger1.guess());
-   guessChecker2(challenger2.guess());
+    challenger1.setGuess();
+    challenger2.setGuess()
+   guessChecker(challenger1);
+   guessChecker(challenger2);
 
   });
 
@@ -132,18 +133,18 @@ window.onload = function() {
     document.querySelector('#guess-number-input').value = "";
   }
 
-  function getGuessResponse(whichChallenger) {
-    return document.querySelector(`#${whichChallenger}-guess-response`).innerText;
+  function getGuessResponse(challenger) {
+    return document.querySelector(`#${challenger.whichOne}-guess-response`).innerText;
   }
-  function setGuessResponse(whichChallenger, inValue) {
-    document.querySelector(`#${whichChallenger}-guess-response`).innerText = inValue;
+  function setGuessResponse(challenger, inValue) {
+    document.querySelector(`#${challenger.whichOne}-guess-response`).innerText = inValue;
   }
 
   function getLastGuess() {
     return parseInt(document.querySelector('#guessed-number').innerText);
   }
-  function setLastGuess(whichChallenger, inValue) {
-    document.querySelector(`#${whichChallenger}-guessed-number`).innerText = inValue;
+  function setLastGuess(challenger, inValue) {
+    document.querySelector(`#${challenger.whichOne}-guessed-number`).innerText = inValue;
   }
 
   function toggleError(minOrMax, showOrHide){
@@ -170,47 +171,25 @@ window.onload = function() {
     }
   }
 
-  function guessChecker1(inValue){
-     if (!challenger1.guess()) {
-      setGuessResponse('challenger1', 'Enter a Number in Range');
-      console.log(challenger1.guess());
+  function guessChecker(challenger, inValue){
+     if (!challenger.guess) {
+      console.log(challenger.guess);
+      setGuessResponse(challenger, 'Enter a Number');
       // break;
-    } else if (challenger1.guess() < getMinNumber()
-
-      || challenger1.guess() > getMaxNumber()) {
-        setGuessResponse('challenger1','Number out of Range');
-    } else if (challenger1.guess() < randomNumber) {
-      setGuessResponse('challenger1','Guess too Low');
-      setLastGuess('challenger1', challenger1.guess());
-    } else if (challenger1.guess() > randomNumber) {
-      setGuessResponse('challenger1','Guess too High');
-      setLastGuess('challenger1', challenger1.guess());
+    } else if (challenger.guess < getMinNumber()
+      || challenger.guess > getMaxNumber()) {
+        setGuessResponse(challenger,'Number out of Range');
+    } else if (challenger.guess < randomNumber) {
+      setGuessResponse(challenger,'Guess too Low');
+      setLastGuess(challenger, challenger.guess);
+      challenger.guessCount++;
+    } else if (challenger.guess > randomNumber) {
+      setGuessResponse(challenger,'Guess too High');
+      setLastGuess(challenger, challenger.guess);
+      challenger.guessCount++;
     } else {
-      setGuessResponse('challenger1','BOOM');
-      //makes cards
-        //both names as title
-        //winner name and winner as title 
-        //number of tries for the winner
-    }
-  }
-
-  function guessChecker2(inValue){
-     if (!challenger1.guess()) {
-      setGuessResponse('challenger2', 'Enter a Number in Range');
-      console.log(challenger2.guess());
-      // break;
-    } else if (challenger2.guess() < getMinNumber()
-
-      || challenger2.guess() > getMaxNumber()) {
-        setGuessResponse('challenger2','Number out of Range');
-    } else if (challenger2.guess() < randomNumber) {
-      setGuessResponse('challenger2','Guess too Low');
-      setLastGuess('challenger2', challenger2.guess());
-    } else if (challenger2.guess() > randomNumber) {
-      setGuessResponse('challenger2','Guess too High');
-      setLastGuess('challenger2', challenger2.guess());
-    } else {
-      setGuessResponse('challenger2','BOOM');
+      challenger.guessCount++;
+      setGuessResponse(challenger,'BOOM');
       //makes cards
         //both names as title
         //winner name and winner as title 
@@ -220,12 +199,14 @@ window.onload = function() {
 
   // Literally just sets the app to an initial state
   function init() {
+    challenger1 = new Player('challenger1','challenger1');
+    challenger2 = new Player('challenger2', 'challenger2');
     setMinNumber('1');
     setMaxNumber('100');
-    setGuessResponse('challenger1','Guess too high');
-    setGuessResponse('challenger2','Guess too low');
-    setLastGuess('challenger1','??');
-    setLastGuess('challenger2','??');
+    setGuessResponse(challenger1,'Guess too high');
+    setGuessResponse(challenger2,'Guess too low');
+    setLastGuess(challenger1,'??');
+    setLastGuess(challenger2,'??');
     generateRandomNumber();
     
     // startEventListeners(); // can I do this?
