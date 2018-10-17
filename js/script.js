@@ -27,6 +27,8 @@ window.onload = function() {
   const resetButton = document.querySelector('#reset-button');
   const submitButton = document.querySelector('#submit-button');
   const deleteButton = document.querySelector("#right-section");
+  const disableButtonsChecker = document.querySelector("#left-section");
+  // const resetGameChecker = document.querySelector("#left-section");
   /*                  END OF VARIABLES                     */
 
   init(); //means set variables(do i need to?)
@@ -36,20 +38,21 @@ window.onload = function() {
     e.preventDefault();
     updateMinMaxNumber();
     generateRandomNumber();
+    //Enable reset Game
+    document.querySelector('#reset-button').disabled = false; 
+    document.querySelector('#reset-button').style.background = "#d0d2d3";
   });
 
   // Clear Button, clears just guess-input
   clearButton.addEventListener('click', function(e) {
     e.preventDefault();
-    clearGuessInput();
+    clearInputs();
     clearMinRangeInput();
     clearMaxRangeInput();
   });
 
   // Reset Button, reloads page
   resetButton.addEventListener('click', function() {
-    // Can we reset state instead please?
-    // refreshes the page;
     init();
   });
 
@@ -84,10 +87,15 @@ window.onload = function() {
     challenger2.setGuess()
    guessChecker(challenger1);
    guessChecker(challenger2);
+   //Enable reset game
+   document.querySelector('#reset-button').disabled = false; 
+   document.querySelector('#reset-button').style.background = "#6e6e6e";
 
   });
 
   deleteButton.addEventListener('click', deleteCard);
+  disableButtonsChecker.addEventListener('keyup', buttonDisableToggler);
+  // resetGameChecker.addEventListener()
 
   //CARD FROM COMP
 
@@ -138,8 +146,10 @@ window.onload = function() {
   function getGuessInput(player) { 
     return parseInt(document.querySelector(`#${player}-guess`).value);
   }
-  function clearGuessInput() {
-    document.querySelector('#guess-number-input').value = "";
+  function clearInputs() {
+    document.querySelectorAll('input').forEach(e => e.value = "");
+    document.querySelector('#clear-button').disabled = true;
+    document.querySelector('#clear-button').style.background = "#d0d2d3";
   }
 
   function getGuessResponse(challenger) {
@@ -197,29 +207,34 @@ window.onload = function() {
       setLastGuess(challenger, challenger.guess);
       count++;
     } else {
+      setMinNumber(getMinNumber() - 10);
+      setMaxNumber(getMaxNumber() + 10);
       count++;
       setLastGuess(challenger, challenger.guess);
+      isNewGame = true;
       setGuessResponse(challenger,'BOOM');
       createCard(challenger);
-      //makes cards
-        //both names as title
-        //winner name and winner as title 
-        //number of tries for the winner
     }
   }
 
   // Literally just sets the app to an initial state
   function init() {
-    challenger1 = new Player('challenger1');
-    challenger2 = new Player('challenger2');
+    challenger1 = new Player('challenger1', 'Name', 'challenger2');
+      challenger2 = new Player('challenger2', 'Name', 'challenger1');
+      setChallengerName('challenger1', challenger1.name);
+      setChallengerName('challenger2', challenger2.name);
+
     setMinNumber('1');
     setMaxNumber('100');
-    setGuessResponse(challenger1,'Guess too high');
-    setGuessResponse(challenger2,'Guess too low');
+    setGuessResponse(challenger1,'');
+    setGuessResponse(challenger2,'');
     setLastGuess(challenger1,'??');
     setLastGuess(challenger2,'??');
     generateRandomNumber();
-    
+    clearInputs();
+    //Disables reset button...thanks tom..
+    document.querySelector('#reset-button').disabled = true; 
+    document.querySelector('#reset-button').style.background = "#d0d2d3";   
     // startEventListeners(); // can I do this?
   }
 
@@ -237,15 +252,35 @@ window.onload = function() {
       </section>
       <section class="stats">
         <span class="card-guess-count">${count}</span>
-        <span class="del-button"><i class="fas fa-times-circle"></i></span>
+        <span class="del-button">X</span>
       </section>
-</section>
+  </section>
       `)
   }
 
   function deleteCard(e){
-    if(e.target.className === 'del-button'){
+    if(e.target.className ===('del-button')){
       e.target.parentElement.parentElement.remove();
+    }
+  }
+
+  function buttonDisableToggler(e){
+    let shouldDisable = true;
+
+    document.querySelectorAll('input').forEach(function (e){
+      if(e.value){
+        shouldDisable = false;
+      }
+    });
+
+    if(shouldDisable){
+    document.querySelector('#clear-button').disabled = true;
+    document.querySelector('#clear-button').style.background = "#d0d2d3";
+    }
+
+    if(!shouldDisable){
+    document.querySelector('#clear-button').disabled = false;
+    document.querySelector('#clear-button').style.background = "#6e6e6e";
     }
   }
 };

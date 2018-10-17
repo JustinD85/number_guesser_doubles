@@ -208,6 +208,11 @@ width:15px;
   display: flex;
   /*flex-flow: wrap;*/
 }
+
+.bold {
+  font-style: bold;
+
+}
 .challenger-form-section1{
   display: flex;
   flex-direction: column;
@@ -328,7 +333,7 @@ width:15px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-/*   background:red; */
+   /*background:red; */
   height:20%;
   border-bottom: solid 2px lightgrey;
 }
@@ -370,10 +375,8 @@ height:20%;
 
 
 .del-button {
-  height: 20px;
-  width: 20px;
-  background-color: red;
-
+  height: 30px;
+  width: 30px;
 }
 /***********MEDIA QUERIES*********/
 
