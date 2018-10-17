@@ -243,5 +243,9 @@ window.onload = function() {
       `)
   }
 
-  
+  function deleteCard(e){
+    if(e.target.className === 'del-button'){
+      e.target.parentElement.parentElement.remove();
+    }
+  }
 };
