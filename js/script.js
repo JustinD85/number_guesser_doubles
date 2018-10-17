@@ -237,7 +237,7 @@ window.onload = function() {
       </section>
       <section class="stats">
         <span class="card-guess-count">${count}</span>
-        <span class="del-button">del</span>
+        <span class="del-button"><i class="fas fa-times-circle"></i></span>
       </section>
 </section>
       `)

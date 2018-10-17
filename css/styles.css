@@ -368,8 +368,12 @@ height:20%;
   float:right;
 }
 
-.del-button:hover{
-  color:white;
+
+.del-button {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+
 }
 /***********MEDIA QUERIES*********/
 
