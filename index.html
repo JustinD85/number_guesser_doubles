@@ -3,22 +3,24 @@
 
 <head>
  <title>Number Guesser</title>
- <meta name="viewport" content="width=device-width">
+ <!-- <meta name="viewport" content="width=device-width"> -->
  <link rel="stylesheet" type="text/css" href="css/styles.css">
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 </head>
 
 <body>
  <header id="number-guess-title">NUMBER</header>
+
+ <span id="motto">ULTIMATE CHALLENGER EDITION</span>
  <!-- header for ultimate -->
  <div class='container'>
   <!-- left section start -->
   <article id='left-section'>
     <!-- Beggining of Set Range Section -->
 
-    <section>
+    <section id="range-section">
       <form>
-       <div>Set Range</div>
+       <div id="set-range">Set Range</div>
        <div class="min-range-div">
          <span id="input-titles">Min Range</span>
          <input type="number" id="min-range-input">
@@ -36,60 +38,59 @@
    </section>
    <!-- End of Set Range Section -->
 
-
-
-
    <!-- Beginning of Challenger Section -->
-   <section id="challenger-section">
-
-    <form>
-
-     <div id="number-range">
-      The Current Range is <span id="min-range-number">1</span> to <span id="max-range-number">100</span>
+  <section id="challenger-section">
+  <form id="challenger-form">
+    <div id="number-range">
+        The Current Range is <span id="min-range-number">1</span> to <span id="max-range-number">100</span>
     </div>
-
     <div id="challenger1">
-     <ul>
-      <li>Challenger 1</li>
-      <li class="challenger1-name">Name</li>
-      <li>
-        <input id="challenger1-name-input" type="text">
-      </li>
-    </ul>
-    <span class="input-titles">Guess</span><input id="challenger1-guess" type="number">
-  </div>
-
-  <div id="challenger2">
-   <ul>
-    <li>Challenger 2</li>
-    <li class="challenger2-name">Name</li>
-    <li>
-      <input id="challenger2-name-input" type="text">
-    </li>
-  </ul>
-  <span class="input-titles">Guess</span><input id="challenger2-guess" type="number">
-</div>
-
-<!-- button section -->
-<section id="clear-reset-section">
- <button type="submit" id="submit-button">SUBMIT GUESS</button>
- <button type="button" id="reset-button">RESET GAME</button>
- <button type="button" id="clear-button">CLEAR GAME</button>
-</section>
-
+        <ul>
+          <span class="challenger-form-section1">
+            <li>Challenger 1</li>
+            <li class="challenger1-name">Name</li>
+            <li>
+                <input id="challenger1-name-input" type="text">
+            </li>
+          </span>
+          <span class="challenger-form-section2">
+            <li><span class="input-titles">Guess</span></li>
+            <li><input id="challenger1-guess" type="number"></li>
+          </span>
+        </ul>
+        
+    </div>
+    <div id="challenger2">
+        <ul>
+          <span class="challenger-form-section1">
+            <li>Challenger 2</li>
+            <li class="challenger2-name">Name</li>
+            <li>
+                <input id="challenger2-name-input" type="text">
+            </li>
+          </span>
+          <span class="challenger-form-section2">
+            <li><span class="input-titles">Guess</span></li>
+            <li><input id="challenger2-guess" type="number"></li>
+          </span>
+        </ul>
+        
+    </div>
+    <!-- button section -->
+    <section id="clear-reset-section">
+        <button type="submit" id="submit-button">SUBMIT GUESS</button>
+        <button type="button" id="reset-button">RESET GAME</button>
+        <button type="button" id="clear-button">CLEAR GAME</button>
+    </section>
 </form>
-
 </section>
 
 <!-- </section> -->
 
-
-
-<!-- latest score -->
 <section id="latest-guess-section">
-
-  <div class="challenger1-latest-guess">
-    <section class="challenger1-name">Challenger 1 Name</section>
+  <div id="challenger1-latest-guess">
+    <span class="float-left">Latest Score</span>
+    <section class="challenger1-name bold">Challenger 1 Name</section>
     <section class="you-guessed-title">
      currentGuess
    </section>
@@ -101,8 +102,9 @@
    </section>
  </div>
 
- <div class="challenger2-latest-guess">
-  <section class="challenger2-name">Challenger 2 Name</section>
+ <div id="challenger2-latest-guess">
+  <span class="hide-me"> hide me </span>
+  <section class="challenger2-name bold">Challenger 2 Name</section>
   <section class="you-guessed-title">
    currentGuess
  </section>
@@ -122,6 +124,7 @@
 <!-- right section -->
 
 <article id="right-section">
+
 
 </article>
 </div>

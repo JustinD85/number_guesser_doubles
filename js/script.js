@@ -1,18 +1,24 @@
 window.onload = function() {
   let randomNumber;
-  let minNum,maxNum, player1, player2;
+  let minNum,maxNum, challenger1, challenger2;
+  let count = 0;
+  var isGameOver = false;
+  var isNewGame = true;
 
   class Player{
-    constructor(inName){
-      this.name = inName || "player1";
-      this.guess = "";
-      // this.guessHistory = {};
-      this.guessCount = 0;
+    constructor(whichOne, inName, loser){
+      this.whichOne = whichOne;
+      this.name = inName; //required
+      this.guess = 0;
+      this.loser = loser;
+    }
+
+    setGuess(){
+      this.guess = parseInt(document.querySelector(`#${this.whichOne}-guess`).value);
     }
   }
 
-  var isGameOver = false;
-  var isNewGame = true;
+
 
 
   // Buttons
@@ -60,42 +66,24 @@ window.onload = function() {
       var tempP2Name = document.querySelector('#challenger2-name-input');
 
       // This sets the player's names based on input from DOM
-      player1 = new Player(tempP1Name.value, 'guess1')
-      player2 = new Player(tempP2Name.value, 'guess2')
+      challenger1 = new Player('challenger1', tempP1Name.value, 'challenger2');
+      challenger2 = new Player('challenger2', tempP2Name.value, 'challenger1');
       // These functions assign the challenger name
-      setChallengerName('challenger1', player1.name);
-      setChallengerName('challenger2', player2.name);
-
+      setChallengerName('challenger1', challenger1.name);
+      setChallengerName('challenger2', challenger2.name);
+      // These functions assign the losers
+      challenger1.loser = challenger2.name;
+      challenger2.loser = challenger1.name;
+      //Ensures these values aren't set until another game is played.
+      isNewGame = false;
    }
 
+    //PER PLAYER GUESS
+    challenger1.setGuess();
+    challenger2.setGuess()
+   guessChecker(challenger1);
+   guessChecker(challenger2);
 
-
-
-
-
-
-
-
-    // //PER PLAYER GUESS
-    // if (!getGuessInput()) {
-    //   setGuessResponse('Enter a Number in Range');
-    //   // break;
-    // } else if (getGuessInput() < getMinNumber()
-    //   || getGuessInput() > getMaxNumber()) {
-    //     setGuessResponse('Number out of Range');
-    // } else if (getGuessInput() < randomNumber) {
-    //   setGuessResponse('Guess too Low');
-    //   setLastGuess(getGuessInput());
-    // } else if (getGuessInput() > randomNumber) {
-    //   setGuessResponse('Guess too High');
-    //   setLastGuess(getGuessInput());
-    // } else {
-    //   setGuessResponse('BOOM');
-    //   //makes cards
-    //     //both names as title
-    //     //winner name and winner as title 
-    //     //number of tries for the winner
-    // }
   });
 
   //CARD FROM COMP
@@ -137,7 +125,11 @@ window.onload = function() {
   }
 
   function setChallengerName(challengerNum,name) {
-    document.querySelector(`#${challengerNum}-name`).innerText = name;
+    /* This is to iterate through all the names on the page because we get an
+        array back from querySelectorAll. We then need to for loop each
+    */
+     document.querySelectorAll(`.${challengerNum}-name`).forEach(nameElementOnWebPage => nameElementOnWebPage.innerText = name);
+    //document.querySelector(`.${challengerNum}-name`).innerText = name;
   }
 
   function getGuessInput(player) { 
@@ -147,18 +139,18 @@ window.onload = function() {
     document.querySelector('#guess-number-input').value = "";
   }
 
-  function getGuessResponse() {
-    return document.querySelector('#guess-response').innerText;
+  function getGuessResponse(challenger) {
+    return document.querySelector(`#${challenger.whichOne}-guess-response`).innerText;
   }
-  function setGuessResponse(player, inValue) {
-    document.querySelector(`#${player}-guess-response`).innerText = inValue;
+  function setGuessResponse(challenger, inValue) {
+    document.querySelector(`#${challenger.whichOne}-guess-response`).innerText = inValue;
   }
 
   function getLastGuess() {
     return parseInt(document.querySelector('#guessed-number').innerText);
   }
-  function setLastGuess(player, inValue) {
-    document.querySelector(`#${player}-guessed-number`).innerText = inValue;
+  function setLastGuess(challenger, inValue) {
+    document.querySelector(`#${challenger.whichOne}-guessed-number`).innerText = inValue;
   }
 
   function toggleError(minOrMax, showOrHide){
@@ -185,16 +177,65 @@ window.onload = function() {
     }
   }
 
+  function guessChecker(challenger, inValue){
+     if (!challenger.guess) {
+      console.log(challenger.guess);
+      setGuessResponse(challenger, 'Enter a Number');
+      // break;
+    } else if (challenger.guess < getMinNumber()
+      || challenger.guess > getMaxNumber()) {
+        setGuessResponse(challenger,'Number out of Range');
+    } else if (challenger.guess < randomNumber) {
+      setGuessResponse(challenger,'Guess too Low');
+      setLastGuess(challenger, challenger.guess);
+      count++;
+    } else if (challenger.guess > randomNumber) {
+      setGuessResponse(challenger,'Guess too High');
+      setLastGuess(challenger, challenger.guess);
+      count++;
+    } else {
+      count++;
+      setLastGuess(challenger, challenger.guess);
+      setGuessResponse(challenger,'BOOM');
+      createCard(challenger);
+      //makes cards
+        //both names as title
+        //winner name and winner as title 
+        //number of tries for the winner
+    }
+  }
+
   // Literally just sets the app to an initial state
   function init() {
+    challenger1 = new Player('challenger1');
+    challenger2 = new Player('challenger2');
     setMinNumber('1');
     setMaxNumber('100');
-    setGuessResponse('challenger1',' ');
-    setGuessResponse('challenger2',' ');
-    setLastGuess('challenger1','Who');
-    setLastGuess('challenger2','Knows');
+    setGuessResponse(challenger1,'Guess too high');
+    setGuessResponse(challenger2,'Guess too low');
+    setLastGuess(challenger1,'??');
+    setLastGuess(challenger2,'??');
     generateRandomNumber();
     
     // startEventListeners(); // can I do this?
+  }
+
+  function createCard(winner){
+    var tempElement = document.querySelector("#right-section");
+    tempElement.insertAdjacentHTML('beforeend',`
+      <section class="card">
+  <section class="challenger-names">
+    <span class="challenger1-card-name">${winner.name}</span>                     <span class="vs">VS</span> 
+    <span class="challenger2-card-name">${winner.loser}</span></section>
+  <section class="winner">
+    <div class="winner-name">${winner.name}</div>
+    <div =class"winner-style">WINNER</div>
+  </section>
+  <section class="stats">
+    <span class="card-guess-count">${count}</span>
+    <span class="del-button">del</span>
+  </section>
+</section>
+      `)
   }
 };
