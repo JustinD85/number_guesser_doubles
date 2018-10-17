@@ -1,0 +1,266 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"min",
+				"min-height\tproperty"
+			],
+			[
+				"space",
+				"space-between\tjustify-content"
+			],
+			[
+				"border",
+				"border-style\tproperty"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"minran",
+				"min-range"
+			],
+			[
+				"query",
+				"querySelector"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"max",
+				"max-height\tproperty"
+			],
+			[
+				"align",
+				"align-items\tproperty"
+			],
+			[
+				"spa",
+				"space-around\tjustify-content"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"fon",
+				"font-family\tproperty"
+			],
+			[
+				"inl",
+				"inline-block\tdisplay"
+			],
+			[
+				"co",
+				"cover\tbackground-size"
+			],
+			[
+				"backgr",
+				"background-repeat\tproperty"
+			],
+			[
+				"pad",
+				"padding-top\tproperty"
+			],
+			[
+				"ma",
+				"margin\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/tommywilhoit/turing/MOD1/number-guesser2/js/script.js",
+		"/Users/tommywilhoit/turing/MOD1/number-guesser2/css/styles.css",
+		"/Users/tommywilhoit/turing/MOD1/number-guesser2/index.html",
+		"/Users/tommywilhoit/turing/MOD1/static-comp-1/index.html",
+		"/Users/tommywilhoit/turing/MOD1/static-comp-1/styles.css",
+		"/Users/tommywilhoit/turing/MOD1/number-guesser-2",
+		"/Users/tommywilhoit/turing/MOD1/static-comp-1/scripts.js",
+		"/Users/tommywilhoit/turing/MOD1/static-comp-1/normalize.css",
+		"/Users/tommywilhoit/turing/MOD1/number-guesser/styles.css",
+		"/Users/tommywilhoit/turing/MOD1/number-guesser/index.html",
+		"/Users/tommywilhoit/turing/MOD1/javascript-foundations/mythical-creatures/test/unicorn-test.js",
+		"/Users/tommywilhoit/turing/MOD1/javascript-foundations/mythical-creatures/mythical-creatures",
+		"/Users/tommywilhoit/turing/MOD1/testing-javascript/test.js",
+		"/Users/tommywilhoit/turing/MOD1/testing-javascript/implementation.js",
+		"/Users/tommywilhoit/turing/gitpractice/styles.css",
+		"/Users/tommywilhoit/Desktop/dog-party2/index.html",
+		"/Users/tommywilhoit/turing/gitpractice/index.html",
+		"/Users/tommywilhoit/turing/MOD1/number-guesser/script.js",
+		"/Users/tommywilhoit/turing/MOD1/dog-party2/style.css",
+		"/Users/tommywilhoit/Desktop/dog-party2/style.css",
+		"/Users/tommywilhoit/Desktop/dog-party2/readme.md",
+		"/Users/tommywilhoit/turing/MOD1/practice-code/static-site-playground/main.css",
+		"/Users/tommywilhoit/turing/MOD1/practice-code/static-site-playground/index.html",
+		"/Users/tommywilhoit/Desktop/HMTLlesson1.html",
+		"/Users/tommywilhoit/Desktop/style.css",
+		"/Users/tommywilhoit/Desktop/index.html"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

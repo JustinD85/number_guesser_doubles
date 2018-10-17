@@ -26,6 +26,7 @@ window.onload = function() {
   const clearButton = document.querySelector('#clear-button');
   const resetButton = document.querySelector('#reset-button');
   const submitButton = document.querySelector('#submit-button');
+  const deleteButton = document.querySelector("#right-section");
   /*                  END OF VARIABLES                     */
 
   init(); //means set variables(do i need to?)
@@ -85,6 +86,8 @@ window.onload = function() {
    guessChecker(challenger2);
 
   });
+
+  deleteButton.addEventListener('click', deleteCard);
 
   //CARD FROM COMP
 
@@ -223,19 +226,22 @@ window.onload = function() {
   function createCard(winner){
     var tempElement = document.querySelector("#right-section");
     tempElement.insertAdjacentHTML('beforeend',`
-      <section class="card">
-  <section class="challenger-names">
-    <span class="challenger1-card-name">${winner.name}</span>                     <span class="vs">VS</span> 
-    <span class="challenger2-card-name">${winner.loser}</span></section>
-  <section class="winner">
-    <div class="winner-name">${winner.name}</div>
-    <div =class"winner-style">WINNER</div>
-  </section>
-  <section class="stats">
-    <span class="card-guess-count">${count}</span>
-    <span class="del-button">del</span>
-  </section>
+  <section class="card">
+        <section class="challenger-names">
+          <span class="challenger1-card-name">${winner.name}</span>                     <span class="vs">VS</span> 
+          <span class="challenger2-card-name">${winner.loser}</span>
+        </section>
+      <section class="winner">
+        <div class="winner-name">${winner.name}</div>
+        <div =class"winner-style">WINNER</div>
+      </section>
+      <section class="stats">
+        <span class="card-guess-count">${count}</span>
+        <span class="del-button">del</span>
+      </section>
 </section>
       `)
   }
+
+  
 };
