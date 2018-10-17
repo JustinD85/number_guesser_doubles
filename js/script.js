@@ -1,13 +1,16 @@
 window.onload = function() {
   let randomNumber;
   let minNum,maxNum, challenger1, challenger2;
+  let count = 0;
+  var isGameOver = false;
+  var isNewGame = true;
 
   class Player{
-    constructor(whichOne, inName){
+    constructor(whichOne, inName, loser){
       this.whichOne = whichOne;
       this.name = inName; //required
       this.guess = 0;
-      this.guessCount = 0;
+      this.loser = loser;
     }
 
     setGuess(){
@@ -15,8 +18,7 @@ window.onload = function() {
     }
   }
 
-  var isGameOver = false;
-  var isNewGame = true;
+
 
 
   // Buttons
@@ -64,11 +66,15 @@ window.onload = function() {
       var tempP2Name = document.querySelector('#challenger2-name-input');
 
       // This sets the player's names based on input from DOM
-      challenger1 = new Player('challenger1', tempP1Name.value)
-      challenger2 = new Player('challenger2', tempP2Name.value)
+      challenger1 = new Player('challenger1', tempP1Name.value, 'challenger2');
+      challenger2 = new Player('challenger2', tempP2Name.value, 'challenger1');
       // These functions assign the challenger name
       setChallengerName('challenger1', challenger1.name);
       setChallengerName('challenger2', challenger2.name);
+      // These functions assign the losers
+      challenger1.loser = challenger2.name;
+      challenger2.loser = challenger1.name;
+      //Ensures these values aren't set until another game is played.
       isNewGame = false;
    }
 
@@ -182,14 +188,16 @@ window.onload = function() {
     } else if (challenger.guess < randomNumber) {
       setGuessResponse(challenger,'Guess too Low');
       setLastGuess(challenger, challenger.guess);
-      challenger.guessCount++;
+      count++;
     } else if (challenger.guess > randomNumber) {
       setGuessResponse(challenger,'Guess too High');
       setLastGuess(challenger, challenger.guess);
-      challenger.guessCount++;
+      count++;
     } else {
-      challenger.guessCount++;
+      count++;
+      setLastGuess(challenger, challenger.guess);
       setGuessResponse(challenger,'BOOM');
+      createCard(challenger);
       //makes cards
         //both names as title
         //winner name and winner as title 
@@ -199,8 +207,8 @@ window.onload = function() {
 
   // Literally just sets the app to an initial state
   function init() {
-    challenger1 = new Player('challenger1','challenger1');
-    challenger2 = new Player('challenger2', 'challenger2');
+    challenger1 = new Player('challenger1');
+    challenger2 = new Player('challenger2');
     setMinNumber('1');
     setMaxNumber('100');
     setGuessResponse(challenger1,'Guess too high');
@@ -210,5 +218,24 @@ window.onload = function() {
     generateRandomNumber();
     
     // startEventListeners(); // can I do this?
+  }
+
+  function createCard(winner){
+    var tempElement = document.querySelector("#right-section");
+    tempElement.insertAdjacentHTML('beforeend',`
+      <section class="card">
+  <section class="challenger-names">
+    <span class="challenger1-card-name">${winner.name}</span>                     <span class="vs">VS</span> 
+    <span class="challenger2-card-name">${winner.loser}</span></section>
+  <section class="winner">
+    <div class="winner-name">${winner.name}</div>
+    <div =class"winner-style">WINNER</div>
+  </section>
+  <section class="stats">
+    <span class="card-guess-count">${count}</span>
+    <span class="del-button">del</span>
+  </section>
+</section>
+      `)
   }
 };
