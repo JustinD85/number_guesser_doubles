@@ -7,7 +7,6 @@ window.onload = function() {
   let isNewGame = true;
   let canStartGame = true;
 
-
   class Challenger {
     constructor(whichOne, inName, loser) {
       this.whichOne = whichOne;
@@ -64,7 +63,6 @@ window.onload = function() {
     if(checkInitChallenger('challenger1','challenger2')
       && checkInitChallenger('challenger2','challenger1')){
         isNewGame = false;
-      
     }
     // If 
     if(!isNewGame){
@@ -258,14 +256,14 @@ window.onload = function() {
             </section>
             <section class="stats">
               <span class="card-guess-count">${count}</span>
-              <span class="del-button">X</span>
+              <span class="del-button mouseMe">X</span>
             </section>
         </section>
     `)
   }
 
   function deleteCard(e) {
-      if (e.target.className === ('del-button')) {
+      if (e.target.className === ('del-button mouseMe')) {
           e.target.parentElement.parentElement.remove();
       }
   }
