@@ -220,9 +220,9 @@ window.onload = function() {
   // Literally just sets the app to an initial state
   function init() {
     challenger1 = new Player('challenger1', 'Name', 'challenger2');
-      challenger2 = new Player('challenger2', 'Name', 'challenger1');
-      setChallengerName('challenger1', challenger1.name);
-      setChallengerName('challenger2', challenger2.name);
+    challenger2 = new Player('challenger2', 'Name', 'challenger1');
+    setChallengerName('challenger1', challenger1.name);
+    setChallengerName('challenger2', challenger2.name);
 
     setMinNumber('1');
     setMaxNumber('100');
@@ -243,7 +243,8 @@ window.onload = function() {
     tempElement.insertAdjacentHTML('beforeend',`
   <section class="card">
         <section class="challenger-names">
-          <span class="challenger1-card-name">${winner.name}</span>                     <span class="vs">VS</span> 
+          <span class="challenger1-card-name">${winner.name}</span>                     
+          <span class="vs">VS</span> 
           <span class="challenger2-card-name">${winner.loser}</span>
         </section>
       <section class="winner">

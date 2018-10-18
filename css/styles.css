@@ -41,7 +41,7 @@ ul{
 }
 
 #number-guess-title{
- font-size: 5rem;
+ font-size: 5vw;
  display:flex;
  align-items:flex-end;
  justify-content:center;
@@ -380,63 +380,65 @@ height:20%;
 }
 /***********MEDIA QUERIES*********/
 
-/* Large devices (large desktops, 1200px and up) */
- @media (max-width: 1210px) {
-   #number-guess-title{
-     font-size: 3.5rem;
-   }
- }
+
 
  /* Large devices (large desktops, 1200px and up) */
  @media (max-width: 1000px) {
-   #number-guess-title{
-     font-size: 3rem;
-   }
+  .container,
+  #clear-reset-section,
+  #latest-guess-section{
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile{
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+  }
+  #challenger2-latest-guess{
+    border-left: none;
+    border-top: 2px solid lightgrey;
+  }
 
+  #submit-button,
+  #reset-button,
+  #clear-button{
+    width: 100%;
+    margin: 3px;
+  }
+
+
+
+  #left-section,
+  #right-section{
+    width: 100vw;
+    height: 100%;
+  }
+  #input-titles,
+  #set-range,
+  #number-range,
+  {
+    display: flex;
+    justify-content: center;
+  }
+  #challenger1 > ul,
+  #challenger2 > ul{
+    display: block;
+  }
+  .min-range-div,
+  .max-range-div{
+    width: 100%;
+  }
+
+  #min-range-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
  }
-
- /* Medium devices (desktops, 992px and up) */
- @media (max-width: 770px) {
-   #number-guess-title{
-   font-size: 2rem;
-   }
- }
-
-
-/* Small devices ( up to 420px) */
- @media only screen and (max-width: 514px) {
-   body{
-     font-size: 13px;
-   }
-   #number-guess-title{
-     font-size: 1rem;
-     display:flex;
-     align-items:flex-end;
-     height:20%;
-/*       background:black; */
-   }
-   .min-range-div{
-     width:50%;
-   }
-
-   .max-range-div{
-     width:50%;
-   }
-   #update-button-div{
-     margin: 0 30px;
-     width: 100%;
-/*       background:black; */
-   }
-   #submit-button{
-     font-size:1rem;
-    }
-   #right-section section{
-/*       align-items:flex-start; */
-     text-align:center;
-     font-size:2rem;
-   }
-   #guess-response{
-     align-items:flex-start;
-   }
-   
+   input{
+    width: 100%;
+    box-shadow: 0px 0px 1px 1px #d0d2d3;
+  }
  }
