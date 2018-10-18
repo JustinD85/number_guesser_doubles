@@ -4,6 +4,7 @@
 <head>
  <title>Number Guesser</title>
  <!-- <meta name="viewport" content="width=device-width"> -->
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
  <link rel="stylesheet" type="text/css" href="css/styles.css">
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 </head>
@@ -19,15 +20,15 @@
     <!-- Beggining of Set Range Section -->
 
     <section id="range-section">
-      <form>
-       <div id="set-range">Set Range</div>
+      <form id="min-range-form">
+       <div class="bold mobile" id="set-range">Set Range</div>
        <div class="min-range-div">
-         <span id="input-titles">Min Range</span>
+         <span class="mobile" id="input-titles">Min Range</span>
          <input type="number" id="min-range-input">
          <span id="min-range-error"> Enter a min range</span>
        </div>
        <div class="max-range-div">
-         <span id="input-titles">Max Range</span>
+         <span class="mobile" id="input-titles">Max Range</span>
          <input type="number" id="max-range-input">
          <span id="max-range-error"> Enter a max range</span>
        </div>
@@ -41,20 +42,20 @@
    <!-- Beginning of Challenger Section -->
   <section id="challenger-section">
   <form id="challenger-form">
-    <div id="number-range">
-        The Current Range is <span id="min-range-number">1</span> to <span id="max-range-number">100</span>
+    <div class="mobile" id="number-range">
+        The Current Range is <span class="mobile" id="min-range-number">1</span> to <span class="mobile" id="max-range-number">100</span>
     </div>
     <div id="challenger1">
         <ul>
           <span class="challenger-form-section1">
-            <li>Challenger 1</li>
-            <li class="challenger1-name">Name</li>
+            <li class="bold mobile">Challenger 1</li>
+            <li class="challenger1-name mobile">Name</li>
             <li>
                 <input id="challenger1-name-input" type="text">
             </li>
           </span>
           <span class="challenger-form-section2">
-            <li><span class="input-titles">Guess</span></li>
+            <li><span class="input-titles mobile">Guess</span></li>
             <li><input id="challenger1-guess" type="number"></li>
           </span>
         </ul>
@@ -63,14 +64,14 @@
     <div id="challenger2">
         <ul>
           <span class="challenger-form-section1">
-            <li>Challenger 2</li>
-            <li class="challenger2-name">Name</li>
+            <li class="bold mobile">Challenger 2</li>
+            <li class="challenger2-name mobile">Name</li>
             <li>
                 <input id="challenger2-name-input" type="text">
             </li>
           </span>
           <span class="challenger-form-section2">
-            <li><span class="input-titles">Guess</span></li>
+            <li><span class="input-titles mobile">Guess</span></li>
             <li><input id="challenger2-guess" type="number"></li>
           </span>
         </ul>
@@ -89,7 +90,7 @@
 
 <section id="latest-guess-section">
   <div id="challenger1-latest-guess">
-    <span class="float-left">Latest Score</span>
+    <span class="float-left mobile">Latest Score</span>
     <section class="challenger1-name bold">Challenger 1 Name</section>
     <section class="you-guessed-title">
      currentGuess
