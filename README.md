@@ -19,4 +19,5 @@ This project was about working with one other person to recreate an interactive,
 * JavaScript
 
 ### Final Site
-<img width="1421" alt="screen shot 2018-10-17 at 11 15 48 pm" src="https://user-images.githubusercontent.com/18714169/47132779-f8f16e00-d262-11e8-925c-2897b380a186.png">
+<img width="1395" alt="screen shot 2018-10-17 at 11 31 32 pm" src="https://user-images.githubusercontent.com/18714169/47133193-de1ff900-d264-11e8-9905-bc5c0f19131b.png">
+
