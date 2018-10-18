@@ -11,11 +11,15 @@ Mod 1 - Number Guesser Doubles
 This project was about working with one other person to recreate an interactive, two-player,online number guessing game. 
 
 <img width="996" alt="screen shot 2018-10-17 at 11 24 20 pm" src="https://user-images.githubusercontent.com/18714169/47132939-d0b63f00-d263-11e8-963d-efb0abbce2b7.png">
-### Co-Developers
+
+### Developers:
+ [Justin Duncan](https;//github.com/JustinD85) [Tom Wilhoit](https;//github.com/TomWilhoit)
+								
+
 
 ### Built with
 * HTML
-* CSS
+* CSS/Flexbox
 * JavaScript
 
 ### Final Site
