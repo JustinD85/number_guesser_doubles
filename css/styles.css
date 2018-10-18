@@ -236,7 +236,7 @@ width:15px;
  visibility: hidden;
 }
 #challenger1-error::before{
-  content: url(../img/error-icon.svg);
+content: url(../img/error-icon.svg);
 height:15px;
 width:15px;
 /*visibility: hidden;*/
@@ -450,6 +450,10 @@ height:20%;
     width: 100%;
   }
 
+}
+
+.mouseMe:hover{
+  cursor: pointer;
 }
 
  /* Large devices (large desktops, 1200px and up) */
