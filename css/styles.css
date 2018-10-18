@@ -28,7 +28,7 @@ padding:2vw;
 }
 
 input{
- height:4vh;
+ height:3vh;
  width: 95%;
 }
 
@@ -125,7 +125,7 @@ form{
 #input-titles{
  width:100%;
  display:block;
- font-weight:bold;
+ /*font-weight:bold;*/
  /*background:blue;*/
 }
 .min-range-div{
@@ -161,6 +161,7 @@ height:15px;
 width:15px;
 /*visibility: hidden;*/
 }
+
 
 #max-range-error{
  color:#dd1972;
@@ -230,6 +231,29 @@ width:15px;
 #challenger2-name-input{
   padding-right: 15px;
 }
+#challenger1-error{
+  color:#dd1972;
+ visibility: hidden;
+}
+#challenger1-error::before{
+  content: url(../img/error-icon.svg);
+height:15px;
+width:15px;
+/*visibility: hidden;*/
+}
+
+#challenger2-error{
+  color:#dd1972;
+ visibility: hidden;
+}
+
+#challenger2-error::before{
+content: url(../img/error-icon.svg);
+height:15px;
+width:15px;
+/*visibility: hidden;*/
+}
+
 
 #clear-reset-section{
  width:100%;
@@ -316,7 +340,7 @@ width:15px;
 .card{
   border: 2px grey solid;
   min-height:250px;
-  height: 10vhpx;
+  height: 10vh;
   max-height: 250px;
   width: 80%;
   display:flex;
@@ -326,9 +350,14 @@ width:15px;
   margin: 25px 0;
   background:#f7f7f7;
   box-sizing: border-box;
-  
 }
-
+.card-guess-count{
+  font-weight: bolder;
+}
+.card-guess-count::after{
+  content: ' GUESSES';
+  font-weight: lighter;
+}
 .challenger-names{
   display:flex;
   justify-content:space-between;
@@ -375,15 +404,83 @@ height:20%;
 
 
 .del-button {
-  height: 30px;
-  width: 30px;
+  height: 23px;
+  width: 23px;
+  background: #6e6e6e;
+  color: lightgrey;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /***********MEDIA QUERIES*********/
+@media (max-width: 900px){
+  #number-guess-title{
+    font-size: 8vw;
+  }
+  #motto::before{
+  content: '';
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px lightgrey solid;
+  width:100px;
+  height: 11px;
+  margin-right: 5px;
+}
+  #motto{
+    font-size: 3vw;
+  }
+    #motto::after{
+  content: '';
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px lightgrey solid;
+  width:100px;
+  height: 11px;
+  margin-right: 5px;
+}
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+  #left-section,
+  #right-section{
+    width: 100%;
+  }
 
-
+}
 
  /* Large devices (large desktops, 1200px and up) */
- @media (max-width: 1000px) {
+ @media (max-width: 500px) {
+  #number-guess-title{
+    font-size: 10vw;
+  }
+  #motto::before{
+  content: '';
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px lightgrey solid;
+  width:30px;
+  height: 8px;
+  margin-right: 5px;
+}
+
+  #motto{
+    font-size: 3vw;
+  }
+    #motto::after{
+  content: '';
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px lightgrey solid;
+  width:30px;
+  height: 8px;
+  margin-right: 5px;
+}
   .container,
   #clear-reset-section,
   #latest-guess-section{
@@ -425,6 +522,14 @@ height:20%;
   #challenger2 > ul{
     display: block;
   }
+  .challenger-names{
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    align-items: center;
+    height: auto;
+  }
   .min-range-div,
   .max-range-div{
     width: 100%;
@@ -441,4 +546,5 @@ height:20%;
     width: 100%;
     box-shadow: 0px 0px 1px 1px #d0d2d3;
   }
+
  }
